@@ -1,0 +1,12 @@
+# Copy this file to config.properties and fill in your local values
+
+# Browser configuration
+browser=chrome
+headless=false
+
+# Application
+baseUrl=https://www.saucedemo.com
+
+# Use credentials from https://www.saucedemo.com/
+username=your_username
+password=your_password
