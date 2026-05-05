@@ -2,9 +2,11 @@
 
 ## 📌 Overview
 
-This repository is a collection of automation frameworks covering different areas of testing.
+This repository represents a QA automation toolkit designed to simulate a real-world testing environment.
 
-The goal is to build a complete QA automation toolkit step by step, focusing on clean structure, readability, and real-world testing scenarios.
+It combines UI, API, and performance testing into a modular structure that can scale and integrate with CI pipelines.
+
+The focus is not just on writing tests, but on building a maintainable and extensible automation architecture.
 
 ---
 
@@ -70,12 +72,12 @@ The current focus is on building a solid UI automation foundation, with addition
 
 ## 🧠 Approach
 
-Each project is intentionally kept simple and focused on:
+This toolkit is built with focus on:
 
-- Clear structure
-- Readable test flows
-- Minimal duplication
-- Practical scenarios instead of over-engineering
+- **Scalability** – easy to extend tests and add new layers
+- **Separation of concerns** – UI, API, and performance layers are isolated but designed for integration
+- **Maintainability** – clean structure, reusable components, minimal duplication
+- **CI readiness** – supports fast smoke tests and full regression execution
 
 ---
 
