@@ -1,6 +1,6 @@
 package com.branko.ui.pom;
 
-import com.branko.ui.config.Config;
+import com.branko.shared.Config;
 import com.branko.ui.base.BasePage;
 import com.branko.ui.driver.DriverManager;
 import org.openqa.selenium.By;
