@@ -16,6 +16,16 @@
     <properties>
         <selenium.version>4.41.0</selenium.version>
         <testng.version>7.12.0</testng.version>
+        <webdrivermanager.version>6.1.0</webdrivermanager.version>
+        <jacksondatabind.version>2.21.2</jacksondatabind.version>
+        <commonslang3.version>3.20.0</commonslang3.version>
+        <alluretestng.version>2.29.1</alluretestng.version>
+        <restassured.version>6.0.0</restassured.version>
+        <assertjcore.version>3.27.7</assertjcore.version>
+        <alluremaven.version>2.17.0</alluremaven.version>
+        <lombok.version>1.18.46</lombok.version>
+
+        <mavensurefireplugin>3.5.5</mavensurefireplugin>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
@@ -24,6 +34,7 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -34,22 +45,44 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>6.1.0</version>
+            <version>${webdrivermanager.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.21.2</version>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jacksondatabind.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.20.0</version>
+            <version>${commonslang3.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
-            <version>2.29.1</version>
+            <version>${alluretestng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertjcore.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -57,7 +90,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.5</version>
+                <version>${mavensurefireplugin}</version>
                 <configuration>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
@@ -68,7 +101,7 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.17.0</version>
+                <version>${alluremaven.version}</version>
             </plugin>
         </plugins>
     </build>

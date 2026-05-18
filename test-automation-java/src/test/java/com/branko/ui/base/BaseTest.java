@@ -1,6 +1,6 @@
 package com.branko.ui.base;
 
-import com.branko.ui.config.Config;
+import com.branko.shared.Config;
 import com.branko.ui.driver.Browser;
 import com.branko.ui.driver.DriverFactory;
 import com.branko.ui.driver.DriverManager;

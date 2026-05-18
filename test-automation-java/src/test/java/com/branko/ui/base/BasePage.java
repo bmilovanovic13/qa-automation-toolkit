@@ -1,7 +1,7 @@
 package com.branko.ui.base;
 
 import com.branko.ui.enums.WaitStrategy;
-import com.branko.ui.utils.AllureUtils;
+import com.branko.shared.AllureUtils;
 import com.branko.ui.utils.ExplicitWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

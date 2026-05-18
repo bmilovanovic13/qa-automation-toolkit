@@ -1,5 +1,6 @@
 package com.branko.ui.utils;
 
+import com.branko.shared.AllureUtils;
 import com.branko.ui.enums.WaitStrategy;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;

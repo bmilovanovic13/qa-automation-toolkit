@@ -1,4 +1,4 @@
-package com.branko.ui.config;
+package com.branko.shared;
 
 import java.io.InputStream;
 import java.util.Properties;
