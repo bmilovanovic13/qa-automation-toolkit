@@ -25,6 +25,12 @@ public class RequestHelper {
         }
     }
 
+    private void logResponseBody(Response response){
+        AllureUtils.attachJson(
+                "Response body",
+                response.getBody().asPrettyString()
+        );
+    }
     private void logResponse(Response response) {
         if (isDebug()) {
             response.then().log().all();
@@ -42,6 +48,9 @@ public class RequestHelper {
                     .get(url(endpoint));
 
             logResponse(response);
+
+            logResponseBody(response);
+
             return response;
         });
     }
@@ -58,6 +67,8 @@ public class RequestHelper {
                     .get(url(endpoint));
 
             logResponse(response);
+
+            logResponseBody(response);
 
             return response;
         });
@@ -80,10 +91,7 @@ public class RequestHelper {
 
             logResponse(response);
 
-            AllureUtils.attachJson(
-                    "Response body",
-                    response.getBody().asPrettyString()
-            );
+            logResponseBody(response);
 
             return response;
         });
@@ -101,12 +109,14 @@ public class RequestHelper {
 
             logResponse(response);
 
+            logResponseBody(response);
+
             return response;
         });
     }
 
     public Response sendDelete(String endpoint) {
-        return AllureUtils.step(String.format("Send PUT request to '%s'", endpoint), () -> {
+        return AllureUtils.step(String.format("Send DELETE request to '%s'", endpoint), () -> {
             RequestSpecification request = given();
 
             logRequest(request);
@@ -116,6 +126,8 @@ public class RequestHelper {
                     .delete(url(endpoint));
 
             logResponse(response);
+
+            logResponseBody(response);
 
             return response;
         });

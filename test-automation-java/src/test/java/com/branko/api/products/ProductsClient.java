@@ -26,6 +26,7 @@ public class ProductsClient extends RequestHelper {
         return new ProductData(
                 extractFromJsonBody(response,"data[0].id", String.class),
                 extractFromJsonBody(response,"data[0].name", String.class),
+                extractFromJsonBody(response,"data[0].price", BigDecimal.class),
                 extractFromJsonBody(response,"data[0].category.name", String.class),
                 extractFromJsonBody(response,"data[0].brand.name", String.class)
         );
@@ -37,6 +38,7 @@ public class ProductsClient extends RequestHelper {
         ApiAssertions.assertField(response, "id", productData.getId(), String.class);
         ApiAssertions.assertField(response, "name", productData.getName(), String.class);
         ApiAssertions.assertFieldIsPositive(response,"price");
+         ApiAssertions.assertField(response, "price", productData.getPrice(), BigDecimal.class);
         ApiAssertions.assertFieldIsNotNull(response, "in_stock",Boolean.class);
         ApiAssertions.assertField(response, "category.name", productData.getCategoryName(), String.class);
         ApiAssertions.assertField(response, "brand.name", productData.getBrandName(), String.class);

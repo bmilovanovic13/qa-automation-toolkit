@@ -4,8 +4,9 @@ import com.branko.shared.AllureUtils;
 import io.restassured.response.Response;
 
 import java.math.BigDecimal;
+import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApiAssertions {
 
@@ -56,5 +57,29 @@ public class ApiAssertions {
             BigDecimal actual = response.jsonPath().getObject(field, BigDecimal.class);
             assertThat(actual).withFailMessage("Field '%s' is not positive. Actual: %s", field, actual).isPositive();
         });
+    }
+
+    public static void assertFieldIsNotEmpty(Response response, String fieldName) {
+        AllureUtils.step(
+                String.format("Verify field '%s' is not empty", fieldName), () -> {
+
+                    List<?> field = response.jsonPath().getList(fieldName);
+
+                    assertThat((List<?>) field)
+                            .withFailMessage("Field '%s' is empty", fieldName)
+                            .isNotEmpty();
+                });
+    }
+
+    public static void assertFieldIsEmpty(Response response, String fieldName) {
+        AllureUtils.step(
+                String.format("Verify field '%s' is empty", fieldName), () -> {
+
+                    List<?> field = response.jsonPath().getList(fieldName);
+
+                    assertThat((List<?>) field)
+                            .withFailMessage("Field '%s' is not empty", fieldName)
+                            .isEmpty();
+                });
     }
 }
