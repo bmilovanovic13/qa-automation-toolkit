@@ -11,7 +11,6 @@ The framework currently includes:
 - UI automation with Selenium
 - API automation with RestAssured
 - Stateful business flow testing
-- Hybrid UI/API testing foundation
 - Allure reporting and reusable utilities
 
 The focus was intentionally placed on:
@@ -24,6 +23,7 @@ The focus was intentionally placed on:
 
 ## 🧱 Project Structure
 
+```text
 com.branko
  ├── ui
  │    ├── base          # Base classes (BaseTest, BasePage)
@@ -76,6 +76,13 @@ com.branko
 - Request/response Allure reporting
 - Sensitive data masking in reports
 
+### Hybrid UI/API (planned)
+
+- API-driven UI state setup
+- Combined UI/API business flows
+- Reduced UI setup dependencies
+- Faster and more stable end-to-end scenarios
+
 ---
 
 ## ⚙️ Configuration
@@ -88,6 +95,7 @@ config.example.properties → config.properties
 
 2. Update local values:
 
+```properties
 # Browser
 browser=chrome
 headless=false
@@ -202,9 +210,7 @@ The goal was to avoid unnecessary framework complexity while still creating a sc
 ## 🔮 Next Steps
 
 - Implement hybrid UI/API scenarios
-- Add CI integration (GitHub Actions)
-- Expand reusable authentication/session handling
-- Add parallel execution support
+- Add GitHub Actions CI pipeline
 
 ---
 
