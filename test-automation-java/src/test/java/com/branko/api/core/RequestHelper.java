@@ -97,24 +97,6 @@ public class RequestHelper {
         });
     }
 
-    public Response sendPut(String endpoint) {
-        return AllureUtils.step(String.format("Send PUT request to '%s'", endpoint), () -> {
-            RequestSpecification request = given();
-
-            logRequest(request);
-
-            Response response = request
-                    .when()
-                    .put(url(endpoint));
-
-            logResponse(response);
-
-            logResponseBody(response);
-
-            return response;
-        });
-    }
-
     public Response sendDelete(String endpoint) {
         return AllureUtils.step(String.format("Send DELETE request to '%s'", endpoint), () -> {
             RequestSpecification request = given();
