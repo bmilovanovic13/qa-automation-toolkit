@@ -47,7 +47,7 @@ public class ApiAssertions {
         AllureUtils.step(String.format("Verify field '%s' is not null", name), () -> {
             T field = response.jsonPath().getObject(name, clazz);
             assertThat(field)
-                    .withFailMessage("Field '%s' is null.", name, field)
+                    .withFailMessage("Field '%s' is null.", name)
                     .isNotNull();
         });
     }

@@ -10,25 +10,25 @@ import static com.branko.api.core.ApiAssertions.*;
 
 public class LoginClient extends RequestHelper {
 
-    private final String endpoint = "/users/login";
+    private final String LOGIN_ENDPOINT = "/users/login";
     private final String adminUsername = Config.get("practiceSoftwareAdminUsername");
     private final String customerUsername = Config.get("practiceSoftwareUsername");
     private final String standardPassword = Config.get("practiceSoftwarePassword");
     private Response loginResponse;
-    public LoginRequest loginAsCustomerRequest = new LoginRequest(
+    private final LoginRequest loginAsCustomerRequest = new LoginRequest(
             customerUsername,
             standardPassword
     );
 
-    public LoginRequest loginAsAdminRequest = new LoginRequest(
+    private final LoginRequest loginAsAdminRequest = new LoginRequest(
             adminUsername,
             standardPassword
     );
-    public Response login(LoginRequest user){
-        return sendPost(endpoint, user);
+    private Response login(LoginRequest user){
+        return sendPost(LOGIN_ENDPOINT, user);
     }
 
-    public String loginAndGetToken(LoginRequest loginUser) {
+    private String loginAndGetToken(LoginRequest loginUser) {
         AllureUtils.step("Login as standard user", () -> {
             loginResponse = login(loginUser);
             assertStatusCode(loginResponse, 200);

@@ -1,12 +1,39 @@
-# Copy this file to config.properties and fill in your local values
+# =========================================================
+# Example configuration file
+# Copy this file to:
+# config.properties
+# =========================================================
 
+# =========================================================
 # Browser configuration
+# Supported values: chrome, firefox
+# =========================================================
 browser=chrome
+
+# Run browser in headless mode
+# Supported values: true, false
 headless=false
 
-# Application
+# Enable request/response debug logging
+# Supported values: true, false
+debugMode=false
+
+# =========================================================
+# UI configuration
+# =========================================================
 baseUrl=https://www.saucedemo.com
 
-# Use credentials from https://www.saucedemo.com/
+# Use credentials from:
+# https://www.saucedemo.com/
 username=your_username
 password=your_password
+
+# =========================================================
+# API configuration
+# =========================================================
+baseUrlPracticeTestingApi=https://api.practicesoftwaretesting.com
+
+# Demo API credentials
+practiceSoftwareAdminUsername=your_admin_email
+practiceSoftwareUsername=your_customer_email
+practiceSoftwarePassword=your_password

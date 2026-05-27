@@ -1,54 +1,80 @@
-# Test Automation (Java)
+# Test Automation Framework (Java)
 
 ## 📌 Overview
 
-This project is a personal test automation setup built using Java.  
-It covers both UI and API testing, with the goal of keeping the structure clean, readable, and easy to extend.
+This project is a personal automation framework built using Java for both UI and API testing.
 
-The focus was not on adding too many features, but on building a solid and maintainable foundation.
+The goal was to create a clean, maintainable, and practical automation setup focused on realistic testing scenarios rather than unnecessary complexity or over-engineering.
+
+The framework currently includes:
+
+- UI automation with Selenium
+- API automation with RestAssured
+- Stateful business flow testing
+- Hybrid UI/API testing foundation
+- Allure reporting and reusable utilities
+
+The focus was intentionally placed on:
+- readability,
+- maintainability,
+- reusable flows,
+- and practical automation design.
 
 ---
 
 ## 🧱 Project Structure
 
-```
 com.branko
  ├── ui
- │    ├── base        # Base classes (BaseTest, BasePage)
- │    ├── config      # Configuration handling
- │    ├── driver      # Driver setup & management
- │    ├── enums       # Enums (WaitStrategy, etc.)
- │    ├── pom         # Page Object classes
- │    ├── tests       # UI test classes
- │    └── utils       # Assertions, waits, Allure helpers
+ │    ├── base          # Base classes (BaseTest, BasePage)
+ │    ├── config        # Configuration handling
+ │    ├── driver        # Driver setup & management
+ │    ├── enums         # Enums (WaitStrategy, etc.)
+ │    ├── pom           # Page Object classes
+ │    ├── tests         # UI test classes
+ │    └── utils         # Assertions, waits, Allure helpers
  │
  ├── api
- │    ├── client      # API client / request handling
- │    ├── tests       # API test classes
- │    └── utils       # API helpers (if needed)
+ │    ├── cart          # Cart API flows & validations
+ │    ├── core          # Request helpers & API assertions
+ │    ├── login         # Authentication flows
+ │    ├── payment       # Payment flows & request models
+ │    ├── products      # Product-related API flows
+ │    ├── users         # User/account validations
+ │    └── tests         # API test classes
+ │
+ └── shared             # Shared utilities & reporting helpers
 ```
 
 ---
 
-## 🚀 What’s implemented
+## 🚀 Implemented Features
 
-### UI (Selenium + TestNG)
+### UI Automation (Selenium + TestNG)
 
 - Page Object Model (POM)
 - Fluent test design
-- Custom assertions (hard + soft)
 - Explicit wait abstraction
+- Custom assertions (hard + soft)
+- Screenshot capture on failure
 - Allure step reporting
-- Screenshot on failure
 - Test grouping (smoke / regression)
 
-### API (RestAssured)
+### API Automation (RestAssured)
 
-*(to be added / in progress)*
-
-- RestAssured-based API tests
+- Reusable API client structure
+- Authentication testing
+- Product validation
+- Related product validation
+- Cart lifecycle testing
+- Payment method validation
+- End-to-end order flow
+- Stateful API business flow chaining
+- Dynamic test data handling
+- Reusable API assertions
 - Request/response validation
-- Reusable client structure
+- Request/response Allure reporting
+- Sensitive data masking in reports
 
 ---
 
@@ -56,77 +82,129 @@ com.branko
 
 1. Copy example config:
 
-```
+```text
 config.example.properties → config.properties
 ```
 
 2. Update local values:
 
-```
+# Browser
 browser=chrome
 headless=false
-baseUrl=https://www.saucedemo.com
 
-# Use credentials from https://www.saucedemo.com/
+# UI
+baseUrl=https://www.saucedemo.com
 username=your_username
 password=your_password
+
+# API
+baseUrlPracticeTestingApi=https://api.practicesoftwaretesting.com
+practiceSoftwareUsername=your_email
+practiceSoftwarePassword=your_password
+practiceSoftwareAdminUsername=admin_email
+
+# Debug logging
+debugMode=false
 ```
 
 > `config.properties` is ignored by Git and should not be committed.
 
 ---
 
-## ▶️ Running tests
+## ▶️ Running Tests
 
 Run all tests:
 
-```
+```bash
 mvn test
 ```
 
-Run specific group:
+Run UI smoke tests:
 
-```
+```bash
 mvn test -Dgroups=smoke
 ```
 
-```
+Run UI regression tests:
+
+```bash
 mvn test -Dgroups=regression
+```
+
+Run API smoke tests:
+
+```bash
+mvn test -Dgroups=smoke-api
+```
+
+Run API regression tests:
+
+```bash
+mvn test -Dgroups=regression-api
 ```
 
 ---
 
-## 📊 Allure report
+## 📊 Allure Reporting
 
-```
+Generate and open Allure report:
+
+```bash
 mvn test
 allure serve target/allure-results
 ```
 
+The framework includes:
+
+- Structured step reporting
+- Request payload attachments
+- Response body attachments
+- Screenshot capture on failure
+- Debug request/response logging
+- Sensitive data masking
+
 ---
 
-## 🧪 Current test coverage
+## 🧪 Current Test Coverage
 
-- Login (positive & negative)
+### UI
+
+- Login flows
+- Checkout flow
+- Product/cart interactions
+
+### API
+
+- Authentication (positive & negative scenarios)
+- Product validation
+- Related product validation
+- Cart lifecycle testing
+- Payment method validation
 - End-to-end order flow
-- Checkout validation
-- Inventory state changes (add/remove product)
+- Stateful business flow chaining
 
 ---
 
-## 🧠 Notes
+## 🧠 Design Principles
 
-The project is intentionally kept simple to focus on clarity and good structure rather than over-engineering.
+The framework is intentionally kept simple and practical, focusing on:
 
-The API layer is planned to follow the same principles as the UI part (clean structure, reusable components, readable tests).
+- Readability
+- Maintainability
+- Reusable business flows
+- Realistic automation scenarios
+- Minimal but useful abstractions
+
+The goal was to avoid unnecessary framework complexity while still creating a scalable and production-minded automation setup.
 
 ---
 
-## 🔮 Next steps
+## 🔮 Next Steps
 
-- Implement API tests (RestAssured)
-- Add integration scenarios (UI + API combined)
-- Optional CI setup (GitHub Actions)
+- Implement hybrid UI/API scenarios
+- Add CI integration (GitHub Actions)
+- Expand reusable authentication/session handling
+- Add parallel execution support
 
 ---
 

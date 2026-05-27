@@ -6,8 +6,8 @@ import com.branko.api.products.ProductsClient;
 import org.testng.annotations.Test;
 
 public class CartTest {
-    ProductsClient productsClient = new ProductsClient();
-    CartClient cart = new CartClient();
+    private final ProductsClient productsClient = new ProductsClient();
+    private final CartClient cart = new CartClient();
 
     @Test(groups = {"api", "smoke-api"}, description = "Verify product is added to cart successfully")
     public void shouldAddProductsToCartSuccessfully(){
