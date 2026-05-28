@@ -75,7 +75,7 @@ Current coverage includes:
 - Reduced UI setup dependencies
 - Faster and more stable end-to-end scenarios
 
-👉 See: `test-automation-java`
+👉 See: [test-automation-java](test-automation-java/README.md)
 
 ---
 
@@ -94,7 +94,7 @@ Planned focus areas:
 
 > This module is planned for future expansion and will be used for exploring modern UI automation approaches alongside Selenium.
 
-👉 See: `ui-automation-playwright`
+👉 See: [ui-automation-playwright](ui-automation-playwright/README.md)
 
 ---
 
@@ -112,7 +112,7 @@ Planned focus areas:
 
 > This module is planned for future performance testing experiments and lightweight API load testing.
 
-👉 See: `performance-testing-k6`
+👉 See: [performance-testing-k6](performance-testing-k6/README.md)
 
 ---
 
