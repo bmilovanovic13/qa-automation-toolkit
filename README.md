@@ -2,102 +2,194 @@
 
 ## 📌 Overview
 
-This repository represents a QA automation toolkit designed to simulate a real-world testing environment.
+This repository represents a personal QA automation toolkit built to simulate realistic testing scenarios across multiple testing layers.
 
-It combines UI, API, and performance testing into a modular structure that can scale and integrate with CI pipelines.
+The goal of the project is not to create an over-engineered framework, but to build a practical and maintainable automation setup that reflects real-world QA engineering work.
 
-The focus is not just on writing tests, but on building a maintainable and extensible automation architecture.
+The repository currently includes:
+
+- UI automation
+- API automation
+- Hybrid UI/API testing foundation
+- Reusable automation utilities
+- CI-ready project structure
+
+The focus is intentionally placed on:
+
+- readability,
+- maintainability,
+- reusable business flows,
+- realistic automation scenarios,
+- and practical engineering decisions.
+
+The Java automation module is currently the primary and most actively developed part of the repository, while additional modules are planned for future expansion.
 
 ---
 
-## 🧰 Projects included
+## 🧰 Projects Included
 
 ### 🔹 Java Automation (UI + API)
 
 Tech stack:
+
 - Java
 - Selenium WebDriver
 - TestNG
 - Maven
+- RestAssured
 - Allure Reporting
-- RestAssured *(planned)*
 
-Covers:
-- UI automation (login, checkout, validations)
-- API automation *(in progress)*
+Focus areas:
+
+- UI automation
+- API automation
+- Business flow testing
+- Stateful API flow chaining
+- Hybrid UI/API testing foundation
+- Reusable automation utilities
+
+Current coverage includes:
+
+### UI
+
+- Login flows
+- Product/cart interactions
+- Billing and checkout validation
+- Order flow scenarios
+
+### API
+
+- Authentication testing
+- Product validation
+- Related product validation
+- Cart lifecycle testing
+- Payment method validation
+- End-to-end order flow
+- Request/response reporting
+- Negative API scenarios
+
+### Hybrid UI/API (planned)
+
+- API-driven UI state setup
+- Combined UI/API business flows
+- Reduced UI setup dependencies
+- Faster and more stable end-to-end scenarios
 
 👉 See: `test-automation-java`
 
 ---
 
-### 🔹 Playwright (E2E)
+### 🔹 Playwright (Planned)
 
-Tech stack:
+Planned tech stack:
+
 - Playwright
 - TypeScript / JavaScript
 
-Focus:
-- Modern UI testing
-- Fast and reliable E2E scenarios
+Planned focus areas:
+
+- Modern UI automation
+- Fast and reliable end-to-end flows
+- Lightweight browser automation
+
+> This module is planned for future expansion and will be used for exploring modern UI automation approaches alongside Selenium.
 
 👉 See: `ui-automation-playwright`
 
 ---
 
-### 🔹 k6 (Performance)
+### 🔹 k6 (Planned)
 
-Tech stack:
+Planned tech stack:
+
 - k6
 
-Focus:
+Planned focus areas:
+
+- API performance testing
 - Load testing
-- Performance validation
-- API stress scenarios
+- Basic stress testing scenarios
+
+> This module is planned for future performance testing experiments and lightweight API load testing.
 
 👉 See: `performance-testing-k6`
 
 ---
 
-## 🚧 Work in progress
+## 🧠 Project Approach
 
-This toolkit is being gradually expanded to cover:
+This repository is intentionally structured as a toolkit rather than a single framework.
 
-- API automation (RestAssured)
-- Modern UI testing (Playwright)
-- Performance testing (k6)
+Each module is isolated and focused on a specific testing layer, while still being designed to work together when needed.
 
-The current focus is on building a solid UI automation foundation, with additional layers added step by step.
+The main focus of the project is:
 
----
+- Practical automation design
+- Clean and maintainable structure
+- Minimal but useful abstractions
+- Reusable business flows
+- Realistic testing scenarios
+- CI-friendly organization
 
-## 🧠 Approach
-
-This toolkit is built with focus on:
-
-- **Scalability** – easy to extend tests and add new layers
-- **Separation of concerns** – UI, API, and performance layers are isolated but designed for integration
-- **Maintainability** – clean structure, reusable components, minimal duplication
-- **CI readiness** – supports fast smoke tests and full regression execution
+The goal is to avoid unnecessary complexity while still creating a scalable and production-minded automation setup.
 
 ---
 
-## 🚀 How to use
+## 📊 Reporting
 
-Each module has its own setup and instructions.
+The Java automation framework includes:
 
-Refer to individual project READMEs:
+- Structured Allure step reporting
+- Request/response attachments
+- Response body logging
+- Screenshot capture on failure
+- Sensitive data masking
+- Debug request/response logging
 
-- `test-automation-java/README.md`
-- `ui-automation-playwright/README.md`
-- `performance-testing-k6/README.md`
+### 📸 Reporting Preview
+
+Example reporting screenshots:
+
+- [API Request/Response Reporting](docs/screenshots/api-request-response.png)
+- [Cart Flow Reporting](docs/screenshots/api-cart-flow.png)
+- [UI Order Flow Reporting](docs/screenshots/ui-order-flow.png)
+
+---
+
+## 🚀 Current Direction
+
+The Java automation module is currently the most developed part of the repository and serves as the primary automation project.
+
+Current work is focused on:
+
+- Expanding hybrid UI/API testing
+- Adding GitHub Actions CI pipelines
+- Improving reusable authentication/session handling
+- Expanding realistic business flow coverage
+
+---
+
+## ▶️ How to Use
+
+Each project/module contains its own setup instructions and README documentation.
+
+Refer to:
+
+```text
+test-automation-java/README.md
+ui-automation-playwright/README.md
+performance-testing-k6/README.md
+```
 
 ---
 
 ## 🔮 Roadmap
 
-- Complete API layer (RestAssured)
-- Add integration scenarios (UI + API)
-- Add CI (GitHub Actions)
+- Expand hybrid UI/API scenarios
+- Add GitHub Actions CI pipelines
+- Explore modern UI automation with Playwright
+- Add performance testing experiments with k6
+- Continue expanding realistic business flow coverage
 
 ---
 
