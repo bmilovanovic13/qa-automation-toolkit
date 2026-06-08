@@ -1,4 +1,4 @@
-package com.branko.ui.pom;
+package com.branko.ui.pom.saucedemo;
 
 import com.branko.ui.base.BasePage;
 import com.branko.ui.utils.Assertions;

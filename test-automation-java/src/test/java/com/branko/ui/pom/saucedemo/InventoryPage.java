@@ -1,4 +1,4 @@
-package com.branko.ui.pom;
+package com.branko.ui.pom.saucedemo;
 
 import org.openqa.selenium.By;
 import com.branko.ui.base.BasePage;

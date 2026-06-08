@@ -1,7 +1,7 @@
-package com.branko.ui.tests;
+package com.branko.ui.tests.saucedemo;
 
 import com.branko.ui.base.BaseTest;
-import com.branko.ui.pom.LoginPage;
+import com.branko.ui.pom.saucedemo.LoginPage;
 import org.testng.annotations.Test;
 
 public class CheckoutBillingTest extends BaseTest {

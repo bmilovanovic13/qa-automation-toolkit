@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
 public class ProductsTest {
 
+    ProductsClient productsClient = new ProductsClient();
+
     @Test(groups = {"api", "smoke-api"}, description = "Verify product details are valid")
     public void shouldGetProductSuccessfully(){
-
-        ProductsClient productsClient = new ProductsClient();
 
         ProductData productInfo = productsClient.getProductInfo();
 
@@ -18,8 +18,6 @@ public class ProductsTest {
 
     @Test(groups = {"api", "smoke-api"}, description = "Verify related product details are valid")
     public void shouldGetRelatedProductsSuccessfully(){
-
-        ProductsClient productsClient = new ProductsClient();
 
         ProductData productInfo = productsClient.getProductInfo();
 
