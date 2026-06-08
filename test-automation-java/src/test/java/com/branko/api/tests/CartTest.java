@@ -11,26 +11,25 @@ public class CartTest {
 
     @Test(groups = {"api", "smoke-api"}, description = "Verify product is added to cart successfully")
     public void shouldAddProductsToCartSuccessfully(){
-        ProductData productInfo = productsClient.getProductInfo();
+        ProductData product = productsClient.getAvailableProduct();
 
         String cartId = cart.createCart();
 
-        cart.addProductToCart(cartId, productInfo.getId());
+        cart.addProductToCart(cartId, product.getId());
 
-        cart.verifyProductDetailsInCart(productInfo,cartId);
+        cart.verifyProductDetailsInCart(product,cartId);
     }
 
     @Test(groups = {"api", "smoke-api"}, description = "Verify product can be deleted from cart successfully")
     public void shouldDeleteProductFromCartSuccessfully(){
-        ProductData productInfo = productsClient.getProductInfo();
+        ProductData product = productsClient.getAvailableProduct();
 
         String cartId = cart.createCart();
-        String productId = productInfo.getId();
 
-        cart.addProductToCart(cartId, productId);
-        cart.verifyProductDetailsInCart(productInfo,cartId);
+        cart.addProductToCart(cartId, product.getId());
+        cart.verifyProductDetailsInCart(product,cartId);
 
-        cart.deleteProductFromCart(cartId, productId);
+        cart.deleteProductFromCart(cartId, product.getId());
         cart.verifyCartIsEmpty(cartId);
     }
 }

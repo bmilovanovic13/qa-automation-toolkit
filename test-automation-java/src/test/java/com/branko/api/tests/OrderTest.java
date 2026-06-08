@@ -17,17 +17,15 @@ public class OrderTest {
     private final PaymentClient paymentClient = new PaymentClient();
     @Test(groups = {"api", "smoke-api"}, description = "Verify order can be completed successfully")
     public void shouldCompleteOrderSuccessfully(){
-        //Login
+
         String token = loginClient.loginAsCustomerAndGetToken();
         usersClient.verifyCustomerIsLoggedIn(token);
 
-        //Add Product to cart
-        ProductData productInfo = productsClient.getProductInfo();
+        ProductData product = productsClient.getAvailableProduct();
         String cartId = cart.createCart();
-        cart.addProductToCart(cartId, productInfo.getId());
-        cart.verifyProductDetailsInCart(productInfo,cartId);
+        cart.addProductToCart(cartId, product.getId());
+        cart.verifyProductDetailsInCart(product,cartId);
 
-        //Payment
         paymentClient.completePaymentWith(paymentClient.creditCard());
     }
 }

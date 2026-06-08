@@ -27,6 +27,7 @@ public class ProductsClient extends RequestHelper {
                 extractFromJsonBody(response,"data[0].id", String.class),
                 extractFromJsonBody(response,"data[0].name", String.class),
                 extractFromJsonBody(response,"data[0].price", BigDecimal.class),
+                extractFromJsonBody(response,"data[0].in_stock", Boolean.class),
                 extractFromJsonBody(response,"data[0].category.name", String.class),
                 extractFromJsonBody(response,"data[0].brand.name", String.class)
         );
@@ -38,8 +39,8 @@ public class ProductsClient extends RequestHelper {
         ApiAssertions.assertField(response, "id", productData.getId(), String.class);
         ApiAssertions.assertField(response, "name", productData.getName(), String.class);
         ApiAssertions.assertFieldIsPositive(response,"price");
-         ApiAssertions.assertField(response, "price", productData.getPrice(), BigDecimal.class);
-        ApiAssertions.assertFieldIsNotNull(response, "in_stock",Boolean.class);
+        ApiAssertions.assertField(response, "price", productData.getPrice(), BigDecimal.class);
+        ApiAssertions.assertField(response, "in_stock", productData.isInStock(), Boolean.class);
         ApiAssertions.assertField(response, "category.name", productData.getCategoryName(), String.class);
         ApiAssertions.assertField(response, "brand.name", productData.getBrandName(), String.class);
     }
@@ -126,6 +127,21 @@ public class ProductsClient extends RequestHelper {
                         .isNotBlank();
             });
         }
+    }
+    public ProductData getAvailableProduct() {
+
+        Response response = sendGet(PRODUCTS_ENDPOINT);
+
+        ApiAssertions.assertStatusCode(response, 200);
+
+        List<ProductData> products = response.jsonPath()
+                .getList("data", ProductData.class);
+
+        return products.stream()
+                .filter(ProductData::isInStock)
+                .findFirst()
+                .orElseThrow(() ->
+                        new RuntimeException("No available products found"));
     }
 
 }
