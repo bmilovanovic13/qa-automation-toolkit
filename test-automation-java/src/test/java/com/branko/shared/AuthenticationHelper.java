@@ -1,7 +1,5 @@
-package com.branko.ui.utils;
+package com.branko.shared;
 
-import com.branko.shared.AllureUtils;
-import com.branko.shared.Config;
 import com.branko.ui.driver.DriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

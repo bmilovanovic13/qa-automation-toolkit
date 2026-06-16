@@ -5,7 +5,7 @@ import com.branko.api.products.ProductData;
 import com.branko.api.products.ProductsClient;
 import com.branko.ui.base.BaseTest;
 import com.branko.ui.pom.practicesoftwaretesting.ProductsPage;
-import com.branko.ui.utils.AuthenticationHelper;
+import com.branko.shared.AuthenticationHelper;
 import org.testng.annotations.Test;
 
 public class HybridOrderFlowTest extends BaseTest {
