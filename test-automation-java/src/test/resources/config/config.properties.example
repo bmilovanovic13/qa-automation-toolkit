@@ -31,6 +31,7 @@ password=your_password
 # =========================================================
 # API configuration
 # =========================================================
+baseUrlPracticeTesting=https://practicesoftwaretesting.com/
 baseUrlPracticeTestingApi=https://api.practicesoftwaretesting.com
 
 # Demo API credentials

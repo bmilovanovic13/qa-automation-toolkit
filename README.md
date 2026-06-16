@@ -10,7 +10,7 @@ The repository currently includes:
 
 - UI automation
 - API automation
-- Hybrid UI/API testing foundation
+- Hybrid UI/API testing
 - Reusable automation utilities
 - CI-ready project structure
 
@@ -45,7 +45,7 @@ Focus areas:
 - API automation
 - Business flow testing
 - Stateful API flow chaining
-- Hybrid UI/API testing foundation
+- Hybrid UI/API testing testing
 - Reusable automation utilities
 
 Current coverage includes:
@@ -68,10 +68,14 @@ Current coverage includes:
 - Request/response reporting
 - Negative API scenarios
 
-### Hybrid UI/API (planned)
+### Hybrid UI/API
 
-- API-driven UI state setup
-- Combined UI/API business flows
+Current coverage includes:
+
+- JWT-based browser authentication
+- API-driven order flow execution
+- API-to-UI product verification
+- Cross-layer validation between API and UI
 - Reduced UI setup dependencies
 - Faster and more stable end-to-end scenarios
 
@@ -162,10 +166,7 @@ The Java automation module is currently the most developed part of the repositor
 
 Current work is focused on:
 
-- Expanding hybrid UI/API testing
 - Adding GitHub Actions CI pipelines
-- Improving reusable authentication/session handling
-- Expanding realistic business flow coverage
 
 ---
 
@@ -185,8 +186,6 @@ performance-testing-k6/README.md
 
 ## 🔮 Roadmap
 
-- Expand hybrid UI/API scenarios
-- Add GitHub Actions CI pipelines
 - Explore modern UI automation with Playwright
 - Add performance testing experiments with k6
 - Continue expanding realistic business flow coverage
