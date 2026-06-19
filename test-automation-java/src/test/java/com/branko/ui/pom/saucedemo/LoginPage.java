@@ -1,6 +1,7 @@
 package com.branko.ui.pom.saucedemo;
 
 import com.branko.shared.Config;
+import com.branko.shared.ConfigKey;
 import com.branko.ui.base.BasePage;
 import com.branko.ui.driver.DriverManager;
 import org.openqa.selenium.By;
@@ -17,7 +18,7 @@ public class LoginPage extends BasePage {
 
     //Methods
     public static LoginPage open(){
-        DriverManager.getDriver().navigate().to(Config.get("baseUrl"));
+        DriverManager.getDriver().navigate().to(Config.get(ConfigKey.QA_BASE_URL));
         return new LoginPage();
     }
     public LoginPage verifyUserIsOnLoginPage(){
@@ -27,11 +28,11 @@ public class LoginPage extends BasePage {
     }
     private void performLogin(String username){
         type(USERNAME_FIELD,username, "Username field");
-        typeSecure(PASSWORD_FIELD, Config.get("password"), "Password field");
+        typeSecure(PASSWORD_FIELD, Config.get(ConfigKey.QA_PASSWORD), "Password field");
         click(LOGIN_BUTTON, "Login button");
     }
     public InventoryPage loginAsStandardUser(){
-        performLogin(Config.get("username"));
+        performLogin(Config.get(ConfigKey.QA_USERNAME));
         return new InventoryPage();
     }
 

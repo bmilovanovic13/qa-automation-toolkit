@@ -2,6 +2,7 @@ package com.branko.api.core;
 
 import com.branko.shared.AllureUtils;
 import com.branko.shared.Config;
+import com.branko.shared.ConfigKey;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -13,11 +14,11 @@ import static io.restassured.RestAssured.given;
 public class RequestHelper {
 
     private String url(String endpoint){
-        return String.format(Config.get("baseUrlPracticeTestingApi") + endpoint, endpoint);
+        return String.format(Config.get(ConfigKey.QA_PRACTICE_API_BASE_URL) + endpoint, endpoint);
     }
 
     private boolean isDebug() {
-        return Config.getBoolean("debugMode");
+        return Config.getBoolean(ConfigKey.QA_DEBUG_MODE);
     }
     private void logRequest(RequestSpecification request) {
         if (isDebug()) {

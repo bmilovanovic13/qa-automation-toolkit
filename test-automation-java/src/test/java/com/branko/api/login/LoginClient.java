@@ -4,6 +4,7 @@ import com.branko.api.core.ApiAssertions;
 import com.branko.api.core.RequestHelper;
 import com.branko.shared.Config;
 import com.branko.shared.AllureUtils;
+import com.branko.shared.ConfigKey;
 import io.restassured.response.Response;
 
 import static com.branko.api.core.ApiAssertions.*;
@@ -11,9 +12,9 @@ import static com.branko.api.core.ApiAssertions.*;
 public class LoginClient extends RequestHelper {
 
     private final String LOGIN_ENDPOINT = "/users/login";
-    private final String adminUsername = Config.get("practiceSoftwareAdminUsername");
-    private final String customerUsername = Config.get("practiceSoftwareUsername");
-    private final String standardPassword = Config.get("practiceSoftwarePassword");
+    private final String adminUsername = Config.get(ConfigKey.QA_PRACTICE_ADMIN_USERNAME);
+    private final String customerUsername = Config.get(ConfigKey.QA_PRACTICE_USERNAME);
+    private final String standardPassword = Config.get(ConfigKey.QA_PRACTICE_PASSWORD);
     private Response loginResponse;
     private final LoginRequest loginAsCustomerRequest = new LoginRequest(
             customerUsername,

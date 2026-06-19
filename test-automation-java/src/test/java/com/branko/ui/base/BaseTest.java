@@ -1,6 +1,7 @@
 package com.branko.ui.base;
 
 import com.branko.shared.Config;
+import com.branko.shared.ConfigKey;
 import com.branko.ui.driver.Browser;
 import com.branko.ui.driver.DriverFactory;
 import com.branko.ui.driver.DriverManager;
@@ -12,8 +13,8 @@ public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        boolean headless = Config.getBoolean("headless");
-        Browser browser = Browser.valueOf(Config.get("browser").toUpperCase());
+        boolean headless = Config.getBoolean(ConfigKey.QA_HEADLESS);
+        Browser browser = Browser.valueOf(Config.get(ConfigKey.QA_BROWSER).trim().toUpperCase());
         DriverFactory.initDriver(browser, headless);
     }
 

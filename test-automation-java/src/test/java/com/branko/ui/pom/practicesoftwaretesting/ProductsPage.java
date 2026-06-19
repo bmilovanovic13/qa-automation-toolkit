@@ -1,6 +1,7 @@
 package com.branko.ui.pom.practicesoftwaretesting;
 
 import com.branko.shared.Config;
+import com.branko.shared.ConfigKey;
 import com.branko.ui.base.BasePage;
 import com.branko.ui.driver.DriverManager;
 import org.openqa.selenium.By;
@@ -8,7 +9,7 @@ import org.openqa.selenium.By;
 public class ProductsPage extends BasePage {
 
     public static ProductsPage open(){
-        DriverManager.getDriver().get(Config.get("baseUrlPracticeTesting"));
+        DriverManager.getDriver().get(Config.get(ConfigKey.QA_PRACTICE_BASE_URL));
         return new ProductsPage();
     }
 

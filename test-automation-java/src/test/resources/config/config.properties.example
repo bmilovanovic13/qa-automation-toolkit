@@ -2,39 +2,42 @@
 # Example configuration file
 # Copy this file to:
 # config.properties
+#
+# Configuration values can also be provided through
+# environment variables (used by CI/CD pipelines).
+# Environment variables take precedence over file values.
 # =========================================================
 
 # =========================================================
 # Browser configuration
 # Supported values: chrome, firefox
 # =========================================================
-browser=chrome
+QA_BROWSER=chrome
 
 # Run browser in headless mode
 # Supported values: true, false
-headless=false
+QA_HEADLESS=false
 
 # Enable request/response debug logging
 # Supported values: true, false
-debugMode=false
+QA_DEBUG_MODE=false
 
 # =========================================================
-# UI configuration
+# UI configuration (SauceDemo)
 # =========================================================
-baseUrl=https://www.saucedemo.com
+QA_BASE_URL=https://www.saucedemo.com
 
-# Use credentials from:
-# https://www.saucedemo.com/
-username=your_username
-password=your_password
+# Demo credentials
+QA_USERNAME=standard_user
+QA_PASSWORD=secret_sauce
 
 # =========================================================
-# API configuration
+# UI & API configuration (Practice Software Testing)
 # =========================================================
-baseUrlPracticeTesting=https://practicesoftwaretesting.com/
-baseUrlPracticeTestingApi=https://api.practicesoftwaretesting.com
+QA_PRACTICE_BASE_URL=https://practicesoftwaretesting.com
+QA_PRACTICE_API_BASE_URL=https://api.practicesoftwaretesting.com
 
-# Demo API credentials
-practiceSoftwareAdminUsername=your_admin_email
-practiceSoftwareUsername=your_customer_email
-practiceSoftwarePassword=your_password
+# Demo credentials
+QA_PRACTICE_ADMIN_USERNAME=admin@practicesoftwaretesting.com
+QA_PRACTICE_USERNAME=customer@practicesoftwaretesting.com
+QA_PRACTICE_PASSWORD=welcome01

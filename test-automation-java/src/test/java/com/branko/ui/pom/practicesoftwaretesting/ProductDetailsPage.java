@@ -2,6 +2,7 @@ package com.branko.ui.pom.practicesoftwaretesting;
 
 import com.branko.api.products.ProductData;
 import com.branko.shared.Config;
+import com.branko.shared.ConfigKey;
 import com.branko.ui.base.BasePage;
 import com.branko.ui.driver.DriverManager;
 import com.branko.ui.utils.Assertions;
@@ -32,7 +33,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public static ProductDetailsPage open(String productId){
-        DriverManager.getDriver().get(Config.get("baseUrlPracticeTesting") + "/product/" + productId);
+        DriverManager.getDriver().get(Config.get(ConfigKey.QA_PRACTICE_BASE_URL) + "/product/" + productId);
         return new ProductDetailsPage();
     }
 

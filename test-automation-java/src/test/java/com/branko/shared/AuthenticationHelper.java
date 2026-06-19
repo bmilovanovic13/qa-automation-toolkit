@@ -11,7 +11,7 @@ public class AuthenticationHelper {
             WebDriver driver = DriverManager.getDriver();
 
             driver.get(
-                    Config.get("baseUrlPracticeTesting")
+                    Config.get(ConfigKey.QA_PRACTICE_BASE_URL)
             );
 
             ((JavascriptExecutor) driver)

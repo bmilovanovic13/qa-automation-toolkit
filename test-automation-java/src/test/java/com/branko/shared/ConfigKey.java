@@ -1,0 +1,19 @@
+package com.branko.shared;
+
+public enum ConfigKey {
+
+    QA_BROWSER,
+    QA_HEADLESS,
+    QA_DEBUG_MODE,
+
+    QA_BASE_URL,
+    QA_USERNAME,
+    QA_PASSWORD,
+
+    QA_PRACTICE_BASE_URL,
+    QA_PRACTICE_API_BASE_URL,
+
+    QA_PRACTICE_ADMIN_USERNAME,
+    QA_PRACTICE_USERNAME,
+    QA_PRACTICE_PASSWORD
+}

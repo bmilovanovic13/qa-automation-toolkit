@@ -4,6 +4,7 @@ import com.branko.api.core.ApiAssertions;
 import com.branko.api.core.RequestHelper;
 import com.branko.shared.Config;
 import com.branko.shared.AllureUtils;
+import com.branko.shared.ConfigKey;
 import io.restassured.response.Response;
 
 import java.util.Map;
@@ -23,7 +24,7 @@ public class UsersClient extends RequestHelper {
     public void verifyCustomerIsLoggedIn(String token){
         AllureUtils.step("Verify Customer", () -> {
             Response response = getCurrentUser(token);
-            ApiAssertions.assertField(response,"email", Config.get("practiceSoftwareUsername"), String.class);
+            ApiAssertions.assertField(response,"email", Config.get(ConfigKey.QA_PRACTICE_USERNAME), String.class);
             ApiAssertions.assertField(response, "first_name", "Jane", String.class);
             ApiAssertions.assertField(response, "last_name", "Doe", String.class);
         });
@@ -32,7 +33,7 @@ public class UsersClient extends RequestHelper {
     public void verifyAdminIsLoggedIn(String token){
         AllureUtils.step("Verify admin user", () -> {
             Response response = getCurrentUser(token);
-            ApiAssertions.assertField(response,"email", Config.get("practiceSoftwareAdminUsername"), String.class);
+            ApiAssertions.assertField(response,"email", Config.get(ConfigKey.QA_PRACTICE_ADMIN_USERNAME), String.class);
             ApiAssertions.assertField(response, "first_name", "John", String.class);
             ApiAssertions.assertField(response, "last_name", "Doe", String.class);
             ApiAssertions.assertField(response,"enabled",true, Boolean.class);
