@@ -36,7 +36,7 @@ The toolkit is structured as a collection of independent automation modules that
 
 * 📊 Allure Report: https://bmilovanovic13.github.io/qa-automation-toolkit/
 * ⚙️ GitHub Actions: Java Automation Pipeline
-* ☕ Java Automation Module: `test-automation-java`
+* ☕ Java Automation Module: [test-automation-java](./test-automation-java/README.md)
 
 ---
 
@@ -103,7 +103,7 @@ The toolkit is structured as a collection of independent automation modules that
 * Reporting
 * CI/CD
 
-👉 `test-automation-java`
+👉 [test-automation-java](./test-automation-java/README.md)
 
 ---
 
@@ -115,7 +115,7 @@ The toolkit is structured as a collection of independent automation modules that
 * Fast end-to-end execution
 * Cross-browser testing
 
-👉 `ui-automation-playwright`
+👉 [ui-automation-playwright](./ui-automation-playwright/README.md)
 
 ---
 
@@ -127,7 +127,7 @@ The toolkit is structured as a collection of independent automation modules that
 * Load testing
 * Stress testing experiments
 
-👉 `performance-testing-k6`
+👉 [performance-testing-k6](./performance-testing-k6/README.md)
 
 ---
 
