@@ -16,7 +16,7 @@ QA_BROWSER=chrome
 
 # Run browser in headless mode
 # Supported values: true, false
-QA_HEADLESS=false
+QA_HEADLESS=true
 
 # Enable request/response debug logging
 # Supported values: true, false
