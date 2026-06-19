@@ -17,7 +17,7 @@ public class LoginTest {
         usersClient.verifyCustomerIsLoggedIn(token);
     }
 
-    @Test(groups = {"api", "smoke-api"}, description = "Verify admin can login")
+    @Test(groups = {"api"}, description = "Verify admin can login")
     public void shouldAdminLoginSuccessfully(){
 
         String token = loginClient.loginAsAdminAndGetToken();
