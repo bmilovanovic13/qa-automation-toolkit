@@ -33,8 +33,8 @@ public class PaymentClient extends RequestHelper {
         return new PaymentMethodsRequest(
                 "gift-card",
                 Map.of(
-                        "gift_card_number","123456789",
-                        "validation_code","123456789"
+                        "gift_card_number","123456789ABCdefg",
+                        "validation_code","1234"
                 )
         );
     }

@@ -11,6 +11,11 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   java-tests:
     runs-on: ubuntu-latest
@@ -50,3 +55,18 @@ jobs:
         with:
           name: surefire-reports
           path: test-automation-java/target/surefire-reports
+
+      - name: Setup Pages
+        if: always()
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: test-automation-java/target/site/allure-maven-plugin
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        id: deployment
+        uses: actions/deploy-pages@v4
