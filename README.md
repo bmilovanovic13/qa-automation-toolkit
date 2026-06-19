@@ -1,194 +1,179 @@
 # QA Automation Toolkit
 
-## 📌 Overview
+[![Java Automation](https://github.com/bmilovanovic13/qa-automation-toolkit/actions/workflows/java.yml/badge.svg)](https://github.com/bmilovanovic13/qa-automation-toolkit/actions/workflows/java.yml)
 
-This repository represents a personal QA automation toolkit built to simulate realistic testing scenarios across multiple testing layers.
+[![Allure Report](https://img.shields.io/badge/Allure-Latest%20Report-blue)](https://bmilovanovic13.github.io/qa-automation-toolkit/)
 
-The goal of the project is not to create an over-engineered framework, but to build a practical and maintainable automation setup that reflects real-world QA engineering work.
-
-The repository currently includes:
-
-- UI automation
-- API automation
-- Hybrid UI/API testing
-- Reusable automation utilities
-- CI-ready project structure
-
-The focus is intentionally placed on:
-
-- readability,
-- maintainability,
-- reusable business flows,
-- realistic automation scenarios,
-- and practical engineering decisions.
-
-The Java automation module is currently the primary and most actively developed part of the repository, while additional modules are planned for future expansion.
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green)
+![TestNG](https://img.shields.io/badge/TestNG-Testing-red)
+![RestAssured](https://img.shields.io/badge/RestAssured-API-blue)
+![Maven](https://img.shields.io/badge/Maven-Build-purple)
+![Allure](https://img.shields.io/badge/Allure-Reporting-yellow)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI/CD-black)
 
 ---
 
-## 🧰 Projects Included
+## 📌 Overview
 
-### 🔹 Java Automation (UI + API)
+QA Automation Toolkit is a personal portfolio project focused on building practical and maintainable test automation solutions across multiple testing layers.
 
-Tech stack:
+The project is designed to simulate real-world QA engineering work rather than showcase framework complexity.
 
-- Java
-- Selenium WebDriver
-- TestNG
-- Maven
-- RestAssured
-- Allure Reporting
+Current areas of focus:
 
-Focus areas:
+* UI Automation
+* API Automation
+* Hybrid UI/API Testing
+* CI/CD Integration
+* Test Reporting
 
-- UI automation
-- API automation
-- Business flow testing
-- Stateful API flow chaining
-- Hybrid UI/API testing testing
-- Reusable automation utilities
+The toolkit is structured as a collection of independent automation modules that can evolve separately while following the same engineering principles.
 
-Current coverage includes:
+---
 
-### UI
+## 🔗 Quick Links
 
-- Login flows
-- Product/cart interactions
-- Billing and checkout validation
-- Order flow scenarios
+* 📊 Allure Report: https://bmilovanovic13.github.io/qa-automation-toolkit/
+* ⚙️ GitHub Actions: Java Automation Pipeline
+* ☕ Java Automation Module: `test-automation-java`
 
-### API
+---
 
-- Authentication testing
-- Product validation
-- Related product validation
-- Cart lifecycle testing
-- Payment method validation
-- End-to-end order flow
-- Request/response reporting
-- Negative API scenarios
+## 🚀 Current Capabilities
 
-### Hybrid UI/API
+### UI Automation
 
-Current coverage includes:
+* Selenium WebDriver
+* Page Object Model
+* Fluent business flows
+* Screenshot capture on failure
+* Explicit wait abstraction
+* Smoke and regression execution
 
-- JWT-based browser authentication
-- API-driven order flow execution
-- API-to-UI product verification
-- Cross-layer validation between API and UI
-- Reduced UI setup dependencies
-- Faster and more stable end-to-end scenarios
+### API Automation
 
-👉 See: [test-automation-java](test-automation-java/README.md)
+* RestAssured
+* Reusable API client architecture
+* Authentication testing
+* Product validation
+* Cart lifecycle testing
+* Payment validation
+* Stateful business flow testing
+* Negative testing scenarios
+
+### Hybrid UI/API Testing
+
+* JWT-based browser authentication
+* API-driven state setup
+* API-to-UI data validation
+* Reduced UI dependencies
+* Faster end-to-end execution
+
+### CI/CD & Reporting
+
+* GitHub Actions
+* Automated smoke execution
+* Allure reporting
+* GitHub Pages report publishing
+* Test artifacts and logs
+* Environment variable support
+
+---
+
+## 🧰 Repository Modules
+
+### 🔹 Java Automation
+
+**Tech Stack**
+
+* Java
+* Selenium WebDriver
+* TestNG
+* RestAssured
+* Maven
+* Allure Reporting
+* GitHub Actions
+
+**Coverage**
+
+* UI testing
+* API testing
+* Hybrid testing
+* Reporting
+* CI/CD
+
+👉 `test-automation-java`
 
 ---
 
 ### 🔹 Playwright (Planned)
 
-Planned tech stack:
+**Planned Focus**
 
-- Playwright
-- TypeScript / JavaScript
+* Modern browser automation
+* Fast end-to-end execution
+* Cross-browser testing
 
-Planned focus areas:
-
-- Modern UI automation
-- Fast and reliable end-to-end flows
-- Lightweight browser automation
-
-> This module is planned for future expansion and will be used for exploring modern UI automation approaches alongside Selenium.
-
-👉 See: [ui-automation-playwright](ui-automation-playwright/README.md)
+👉 `ui-automation-playwright`
 
 ---
 
 ### 🔹 k6 (Planned)
 
-Planned tech stack:
+**Planned Focus**
 
-- k6
+* API performance testing
+* Load testing
+* Stress testing experiments
 
-Planned focus areas:
-
-- API performance testing
-- Load testing
-- Basic stress testing scenarios
-
-> This module is planned for future performance testing experiments and lightweight API load testing.
-
-👉 See: [performance-testing-k6](performance-testing-k6/README.md)
+👉 `performance-testing-k6`
 
 ---
 
-## 🧠 Project Approach
+## 🧠 Engineering Principles
 
-This repository is intentionally structured as a toolkit rather than a single framework.
+The project intentionally favors practical engineering decisions over framework complexity.
 
-Each module is isolated and focused on a specific testing layer, while still being designed to work together when needed.
+Main goals:
 
-The main focus of the project is:
-
-- Practical automation design
-- Clean and maintainable structure
-- Minimal but useful abstractions
-- Reusable business flows
-- Realistic testing scenarios
-- CI-friendly organization
-
-The goal is to avoid unnecessary complexity while still creating a scalable and production-minded automation setup.
+* Readability
+* Maintainability
+* Reusable business flows
+* Realistic testing scenarios
+* Minimal but useful abstractions
+* CI-friendly design
 
 ---
 
 ## 📊 Reporting
 
-The Java automation framework includes:
+The Java automation module includes:
 
-- Structured Allure step reporting
-- Request/response attachments
-- Response body logging
-- Screenshot capture on failure
-- Sensitive data masking
-- Debug request/response logging
+* Allure reporting
+* Request/response attachments
+* Screenshot capture on failure
+* Structured test steps
+* Sensitive data masking
+* Debug logging support
 
-### 📸 Reporting Preview
-
-Example reporting screenshots:
-
-- [API Request/Response Reporting](docs/screenshots/api-request-response.png)
-- [Cart Flow Reporting](docs/screenshots/api-cart-flow.png)
-- [UI Order Flow Reporting](docs/screenshots/ui-order-flow.png)
-
----
-
-## 🚀 Current Direction
-
-The Java automation module is currently the most developed part of the repository and serves as the primary automation project.
-
-Current work is focused on:
-
-- Adding GitHub Actions CI pipelines
-
----
-
-## ▶️ How to Use
-
-Each project/module contains its own setup instructions and README documentation.
-
-Refer to:
-
-```text
-test-automation-java/README.md
-ui-automation-playwright/README.md
-performance-testing-k6/README.md
-```
+Latest report is automatically published via GitHub Pages.
 
 ---
 
 ## 🔮 Roadmap
 
-- Explore modern UI automation with Playwright
-- Add performance testing experiments with k6
-- Continue expanding realistic business flow coverage
+### Near Term
+
+* Playwright automation module
+* k6 performance testing module
+* Additional business flow coverage
+
+### Future Exploration
+
+* Parallel execution
+* Expanded hybrid testing
+* Additional CI/CD workflows
 
 ---
 
