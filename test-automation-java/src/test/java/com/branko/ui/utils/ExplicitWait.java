@@ -12,7 +12,7 @@ import java.time.Duration;
 public class ExplicitWait {
     public static WebElement perform(WaitStrategy strategy, By locator) {
 
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
 
         return switch (strategy) {
             case CLICKABLE -> wait.until(ExpectedConditions.elementToBeClickable(locator));

@@ -43,3 +43,10 @@ jobs:
         with:
           name: allure-report
           path: test-automation-java/target/site/allure-maven-plugin
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: test-automation-java/target/surefire-reports
