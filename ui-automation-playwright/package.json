@@ -1,0 +1,19 @@
+{
+  "name": "ui-automation-playwright",
+  "version": "1.0.0",
+  "description": "This module will contain end-to-end UI tests implemented using Playwright.",
+  "scripts": {
+  "test": "playwright test",
+  "test:headed": "playwright test --headed",
+  "test:ui": "playwright test --ui",
+  "report": "playwright show-report"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
